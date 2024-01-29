@@ -20,7 +20,6 @@ function Banner() {
     }
     fetchData();
   }, []);
-  console.log("Api İsteği", movie);
 
   return (
     <div className="Banner relative h-[56.25.vw]">
