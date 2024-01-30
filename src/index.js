@@ -23,6 +23,7 @@ root.render(
     <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
     <Row title="Crime Movies" fetchUrl={requests.fetchCrimeMovies} />
     <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-    <Row title="Romantic" fetchUrl={requests.fetchRomanceMovies} />{" "}
+    <Row title="Romantic" fetchUrl={requests.fetchRomanceMovies} />
+    <footer />
   </React.StrictMode>
 );
