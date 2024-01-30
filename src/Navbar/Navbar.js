@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./Navbar.css";
 import NavbarItem from "./NavbarItem";
 import { BsChevronDown, BsSearch, BsBell } from "react-icons/bs";
@@ -15,10 +15,41 @@ const Navbar = () => {
   const toggleAccountMenu = useCallback(() => {
     setShowAccount((toggle) => !toggle);
   }, []);
+  const [showBar, setShowBar] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 150) {
+        setShowBar(true);
+      } else {
+        setShowBar(false);
+      }
+    });
+    return () => {
+      window.removeEventListener("scroll", null);
+    };
+  }, []);
+  const [bar, setBar] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY < 150) {
+        setBar(true);
+      } else {
+        setBar(false);
+      }
+    });
+    return () => {
+      window.removeEventListener("scroll", null);
+    };
+  }, []);
 
   return (
-    <nav className="w-full fixed z-40 ">
-      <div className="px-4 md:px-16 py-6 flex flex-row items-center transition duration-500 bg-zinc-900 bg-opacity-40">
+    <nav className="w-full fixed z-50 ">
+      <div
+        className={`px-4 md:px-16 py-6 flex flex-row items-center transition ${
+          bar && "bg-zinc-700 bg-opacity-40"
+        }  duration-500 ${showBar && "bg-black"} `}>
         <img
           className="h-4 lg:h-7"
           src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
