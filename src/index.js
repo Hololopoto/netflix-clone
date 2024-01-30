@@ -16,5 +16,10 @@ root.render(
       fetchUrl={requests.fetchNetflixOriginals}
       topFlex
     />
+    <Row
+      title="Netflix Originals"
+      fetchUrl={requests.fetchNetflixOriginals}
+      topFlex
+    />
   </React.StrictMode>
 );
