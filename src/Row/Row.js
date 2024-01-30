@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "../axios";
+import "./Row.css";
 import {
   AiFillStar,
   AiOutlineArrowRight,
@@ -28,12 +29,12 @@ function Row({ title, fetchUrl }) {
   };
 
   return (
-    <div className="List-Group overflow-hidden ">
+    <div className="List-Group ">
       <h2 className="text-white text-xl m-4 pl-4">{title}</h2>
-      <div className="flex flex-row overflow-hidden relative scroll-smooth gap-3 w-full">
+      <div className="flex flex-row relative scroll-smooth gap-3 w-full">
         <button
           onClick={scroolMovieForLeftButton}
-          className="z-10 w-10 pl-3 bg-black m w-[100px] bg-opacity-60 text-white sticky grid items-center justify-items-center left-0">
+          className="z-10 w-10 pl-3 bg-black  w-[100px] bg-opacity-60 text-white sticky grid items-center justify-items-center left-0">
           <AiOutlineArrowLeft className="mr-3" />
         </button>
         {movies.map((movie, index) => (
@@ -41,39 +42,70 @@ function Row({ title, fetchUrl }) {
             className="List-Item flex flex-row"
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}>
-            {hovered !== index && (
-              <div className="movies_poster transition z-0 cursor-pointer lg:w-[240px] md:w-[140px] flex flex-row">
+            (
+            <div className="movies_poster transition z-0 my-4 cursor-pointer lg:w-[240px] md:w-[140px] flex flex-row">
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt=""
+              />
+            </div>
+            )
+            <div className={`infos ${hovered === index && "show-infos"}`}>
+              <div className="info grid  items-center z-10 cursor-pointer transition lg:w-[450px] md:w-[340px] flex flex-row">
                 <img
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  className="moviePoster"
+                  src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
                   alt=""
                 />
               </div>
-            )}
-            {hovered === index && (
-              <div className="infos grid relative items-center ">
-                <div className="info grid  items-center z-10 cursor-pointer transition lg:w-[450px] md:w-[340px] flex flex-row">
-                  <img
-                    className="moviePoster"
-                    src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                    alt=""
-                  />
-                </div>
-                <div className="  flex realative flex-col ">
-                  <div className="rate text-white flex flex-row mx-4 place-content-between items-center">
-                    <div className="name">
-                      {movie?.title || movie?.name || movie?.original_name}
+              <div className="infos-text  flex realative flex-col ">
+                <div className="rate text-white flex flex-row mx-4 place-content-between items-center">
+                  <div className="name">
+                    {movie?.title || movie?.name || movie?.original_name}
+                  </div>
+                  <div className="dates text-white">
+                    <div className="date">
+                      <h5>{movie.release_date || movie.first_air_date}</h5>
                     </div>
-                    <span className="flex items-center flex-row">
-                      <AiFillStar className="fill-yellow-400" />
-                      {movie.vote_average}
-                    </span>
                   </div>
-                  <div className="descript  text-white line-clamp-4 mt-2 mx-6">
-                    {movie.overview}
-                  </div>
+
+                  <span className="flex items-center flex-row">
+                    <AiFillStar className="fill-yellow-400" />
+                    {movie.vote_average}
+                  </span>
+                </div>
+                <div className="descript  text-white line-clamp-4 mt-2 mx-6">
+                  {movie.overview}
                 </div>
               </div>
-            )}
+              <div className="genre text-white flex flex-end flex-row gap-7">
+                {movie.genre_ids?.map((genre_id) => (
+                  <p>
+                    {genre_id === 28
+                      ? "Action"
+                      : genre_id === 12
+                      ? "Adventure"
+                      : genre_id === 16
+                      ? "Animation"
+                      : genre_id === 35
+                      ? "Comedy"
+                      : genre_id === 80
+                      ? "Crime"
+                      : genre_id === 99
+                      ? "Documentary"
+                      : genre_id === 18
+                      ? "Drama"
+                      : genre_id === 10751
+                      ? "Family"
+                      : genre_id === 14
+                      ? "Fantasy"
+                      : genre_id === 36
+                      ? "History"
+                      : ""}
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
         <button

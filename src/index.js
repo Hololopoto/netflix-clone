@@ -16,10 +16,13 @@ root.render(
       fetchUrl={requests.fetchNetflixOriginals}
       topFlex
     />
-    <Row
-      title="Netflix Originals"
-      fetchUrl={requests.fetchNetflixOriginals}
-      topFlex
-    />
+    <Row title="Science Fiction" fetchUrl={requests.fetchScienceFiction} />
+    <Row title="Today's Most Viewed" fetchUrl={requests.fetchTrending} />
+    <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+    <Row title="Comedies" fetchUrl={requests.fetchComedyMovies} />
+    <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
+    <Row title="Crime Movies" fetchUrl={requests.fetchCrimeMovies} />
+    <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+    <Row title="Romantic" fetchUrl={requests.fetchRomanceMovies} />{" "}
   </React.StrictMode>
 );
