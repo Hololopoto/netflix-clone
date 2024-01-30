@@ -18,24 +18,24 @@ export default function Footer() {
         <FaTwitterSquare style={{ marginRight: "10px", fontSize: "23px" }} />
         <FaYoutube style={{ marginRight: "10px", fontSize: "23px" }} />
       </div>
-      <div className=" flex justify-between cursor-pointer w-[80%] mx-auto pt-5">
-        <div className="left flex flex-col gap-1 ">
+      <div className=" flex justify-between cursor-pointer w-[80%] max-[768px]:text-sm max-[768px]:w-[90%] max-[768px]:gap-19 mx-auto pt-5">
+        <div className="left flex flex-col gap-1 max-[768px]:gap-5 ">
           <p>Audio and Subtitles</p>
           <p>Media Center</p>
           <p>Privacy</p>
           <p>Contact Us</p>
         </div>
-        <div className="middle-left flex flex-col gap-1 ">
+        <div className="middle-left flex flex-col gap-1  max-[768px]:gap-5 ">
           <p>Audio Description</p>
           <p>Investor Relations</p>
           <p>Legal Provisions</p>
         </div>
-        <div className="middle-right flex flex-col gap-1 ">
+        <div className="middle-right flex flex-col gap-1 max-[768px]:gap-5 ">
           <p>Audio Description</p>
           <p>Investor Relations</p>
           <p>Legal Provisions</p>
         </div>
-        <div className="right flex flex-col gap-1 ">
+        <div className="right flex flex-col gap-1 max-[768px]:gap-5  ">
           <p>Gift Cards</p>
           <p>Terms of Use</p>
           <p>Corporate Information</p>
