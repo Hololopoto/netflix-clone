@@ -22,7 +22,7 @@ function Banner() {
   }, []);
 
   return (
-    <div className="Banner mb-5 relative h-[56.25.vw]">
+    <div className="Banner mb-20 relative h-[56.25.vw]">
       <img
         src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
         alt=""

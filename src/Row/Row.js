@@ -30,7 +30,9 @@ function Row({ title, fetchUrl }) {
 
   return (
     <div className="List-Group  ">
-      <h2 className="text-white lg:text-3xl md:text-sm -my-8 pl-10">{title}</h2>
+      <h2 className="text-white lg:text-2xl md:text-lg max-[768px]:text-sm -my-8 md:-my-14 max-[768px]:-my-16 pl-10">
+        {title}
+      </h2>
 
       <div className="flex flex-row overflow-hidden relative scroll-smooth gap-3 w-full">
         <button
