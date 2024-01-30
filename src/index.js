@@ -5,6 +5,7 @@ import Navbar from "./Navbar/Navbar";
 import Banner from "./Banner/Banner";
 import Row from "./Row/Row";
 import requests from "./request";
+import Footer from "./Footer/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,6 +25,6 @@ root.render(
     <Row title="Crime Movies" fetchUrl={requests.fetchCrimeMovies} />
     <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
     <Row title="Romantic" fetchUrl={requests.fetchRomanceMovies} />
-    <footer />
+    <Footer />
   </React.StrictMode>
 );

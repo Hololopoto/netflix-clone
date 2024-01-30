@@ -80,7 +80,7 @@ function Row({ title, fetchUrl }) {
                   </span>
                 </div>
                 <hr className="w-[90%] mx-auto mt-3" />
-                <div className="descript lg:block sm:hidden  text-white line-clamp-5 mt-2 mx-6">
+                <div className="descript lg:block sm:hidden  text-white line-clamp-4 mt-2 mx-6">
                   {movie.overview}
                 </div>
                 <hr className="w-[90%] mx-auto my-2" />
