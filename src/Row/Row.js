@@ -39,11 +39,35 @@ function Row({ title, fetchUrl }) {
         </button>
         {movies.map((movie) => (
           <div className="List-Item  flex flex-row">
-            <div className="movies_poster lg:w-[220px] md:w-[140px]   flex flex-row">
+            {/* <div className="movies_poster z-0 cursor-pointer lg:w-[220px] md:w-[140px]   flex flex-row">
               <img
+                className="hover:opacity-0"
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt=""
               />
+            </div> */}
+            <div className="infos">
+              <div className="info z-10 cursor-pointer  lg:w-[520px] md:w-[340px] flex flex-row   ">
+                <img
+                  className="moviePoster"
+                  src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                  alt=""
+                />
+              </div>
+              <div className="invisible">
+                <div className="rate text-white flex flex-row mx-4 place-content-between items-center">
+                  <div className="name">
+                    {movie?.title || movie?.name || movie?.original_name}
+                  </div>
+                  <span className="flex flex-row">
+                    <AiFillStar className="fill-yellow-400" />
+                    {movie.vote_average}
+                  </span>
+                </div>
+                <div className="descript text-white line-clamp-5 mt-2  mx-6">
+                  {movie.overview}
+                </div>
+              </div>
             </div>
           </div>
         ))}
