@@ -30,7 +30,7 @@ function Row({ title, fetchUrl }) {
 
   return (
     <div className="List-Group  ">
-      <h2 className="text-white text-3xl -my-8 pl-10">{title}</h2>
+      <h2 className="text-white lg:text-3xl md:text-sm -my-8 pl-10">{title}</h2>
 
       <div className="flex flex-row overflow-hidden relative scroll-smooth gap-3 w-full">
         <button
@@ -44,7 +44,7 @@ function Row({ title, fetchUrl }) {
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}>
             (
-            <div className="movies_poster transition z-0 my-10 py-10 cursor-pointer lg:w-[240px] md:w-[140px] flex flex-row">
+            <div className="movies_poster transition z-0 my-10 py-10 cursor-pointer lg:w-[240px] md:w-[140px] sm:w-[80px] flex flex-row">
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt=""
@@ -62,9 +62,9 @@ function Row({ title, fetchUrl }) {
                   alt=""
                 />
               </div>
-              <div className="infos-text bg-neutral-700 w-full   flex flex-col ">
+              <div className="infos-text bg-neutral-700 w-full py-4   flex flex-col ">
                 <div className="rate text-white flex flex-row mx-4 place-content-between items-center">
-                  <div className="name  text-2xl">
+                  <div className="name  lg:text-2xl ">
                     {movie?.title || movie?.name || movie?.original_name}
                   </div>
 
