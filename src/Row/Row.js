@@ -52,7 +52,7 @@ function Row({ title, fetchUrl }) {
             </div>
             )
             <div
-              className={`infos opacity-0 absolute z-40 top-0 transition ${
+              className={`infos opacity-0 absolute  z-40 top-0 transition ${
                 hovered === index && "opacity-100"
               }`}>
               <div className="info grid  items-center z-10 cursor-pointer transition lg:w-[450px] md:w-[340px] flex flex-row">
@@ -62,9 +62,9 @@ function Row({ title, fetchUrl }) {
                   alt=""
                 />
               </div>
-              <div className="infos-text bg-neutral-700 w-full py-5  flex flex-col ">
+              <div className="infos-text bg-neutral-700 w-full   flex flex-col ">
                 <div className="rate text-white flex flex-row mx-4 place-content-between items-center">
-                  <div className="name">
+                  <div className="name  text-2xl">
                     {movie?.title || movie?.name || movie?.original_name}
                   </div>
 
@@ -74,14 +74,14 @@ function Row({ title, fetchUrl }) {
                     </div>
                   </div>
 
-                  <span className="flex items-center  flex-row">
+                  <span className="flex items-center   flex-row">
                     <AiFillStar className="fill-yellow-400" />
                     {movie.vote_average}
                   </span>
                 </div>
                 <hr className="w-[90%] mx-auto mt-3" />
-                <div className="descript lg:block sm:hidden  text-white line-clamp-4 mt-2 mx-6">
-                  {movie.overview}
+                <div className="descript lg:block sm:hidden  text-white  mt-2 mx-6">
+                  <p className="line-clamp-4">{movie.overview}</p>
                 </div>
                 <hr className="w-[90%] mx-auto my-2" />
                 <div className="genre w-full bg-neutral-700 text-white pl-4 pb-5 bg flex flex-end flex-row gap-7">
