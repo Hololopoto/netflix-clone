@@ -43,14 +43,13 @@ function Row({ title, fetchUrl }) {
             className="List-Item relative flex  flex-row"
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}>
-            (
             <div className="movies_poster transition z-0 my-10 py-10 cursor-pointer lg:w-[240px] md:w-[140px] sm:w-[80px] flex flex-row">
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt=""
               />
             </div>
-            )
+
             <div
               className={`infos opacity-0 absolute  z-40 top-0 transition ${
                 hovered === index && "opacity-100"
@@ -64,12 +63,12 @@ function Row({ title, fetchUrl }) {
               </div>
               <div className="infos-text bg-neutral-700 w-full py-4   flex flex-col ">
                 <div className="rate text-white flex flex-row mx-4 place-content-between items-center">
-                  <div className="name  lg:text-2xl ">
+                  <div className="name  lg:text-2xl md:text-l sm:text-xs ">
                     {movie?.title || movie?.name || movie?.original_name}
                   </div>
 
                   <div className="dates text-white">
-                    <div className="date">
+                    <div className="date lg:text-2xl md:text-l sm:text-xs">
                       <h5>{movie.release_date || movie.first_air_date}</h5>
                     </div>
                   </div>
@@ -86,7 +85,7 @@ function Row({ title, fetchUrl }) {
                 <hr className="w-[90%] mx-auto my-2" />
                 <div className="genre w-full bg-neutral-700 text-white pl-4 pb-5 bg flex flex-end flex-row gap-7">
                   {movie.genre_ids?.map((genre_id) => (
-                    <p>
+                    <p className="lg:text-xl md:text-l sm:text-xs">
                       {genre_id === 28
                         ? "Action"
                         : genre_id === 12
