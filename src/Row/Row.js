@@ -43,7 +43,7 @@ function Row({ title, fetchUrl }) {
             className="List-Item relative flex  flex-row"
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}>
-            <div className="movies_poster transition z-0 my-10 py-10 cursor-pointer lg:w-[240px] md:w-[140px] sm:w-[80px] flex flex-row">
+            <div className="movies_poster transition z-0 my-10 py-10 cursor-pointer lg:w-[240px] md:w-[140px] max-[768px]:w-[80px] flex flex-row">
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt=""
