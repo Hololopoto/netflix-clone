@@ -5,3 +5,23 @@
 body {
   background: #18181b;
 }
+.List-Item {
+  position: relative;
+  height: 400px;
+  gap: 100px;
+}
+.defaultVisible {
+  opacity: 1;
+  position: absolute;
+}
+.defaultVisible:hover .defaultHidden {
+  opacity: 1;
+}
+.defaultVisible:hover {
+  opacity: 0;
+}
+
+.defaultHidden {
+  opacity: 0;
+  position: absolute;
+}
