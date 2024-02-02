@@ -51,7 +51,7 @@ const Navbar = () => {
       <div
         className={`px-4 md:px-16 py-6 flex  flex-row items-center transition ${
           bar && "bg-zinc-700 bg-opacity-40"
-        }  duration-500 ${showBar && "bg-black"} `}>
+        }  duration-500 ${showBar && "bg-zinc-700"} `}>
         <img
           className="h-4 lg:h-7"
           src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
