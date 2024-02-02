@@ -35,12 +35,12 @@ const Navbar = () => {
     window.addEventListener("scroll", () => {
       if (window.scrollY < 150) {
         setBar(true);
-      } else if (window.scrollY === 0) {
+      } else if (window.scrollY < 1 || window.scrollY === null) {
         setBar(true);
       } else {
         setBar(false);
       }
-      console.log(window.scrollY);
+      // console.log(window.scrollY);
     });
     return () => {
       window.removeEventListener("scroll", null);
@@ -52,7 +52,7 @@ const Navbar = () => {
       <div
         className={`px-4 md:px-16 py-6 flex  flex-row items-center transition ${
           bar && "bg-zinc-700 bg-opacity-40"
-        }  duration-500 ${showBar && "bg-zinc-700"} `}>
+        }  duration-500 ${showBar && "bg-black"} `}>
         <img
           className="h-4 lg:h-7"
           src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"

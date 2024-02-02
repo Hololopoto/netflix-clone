@@ -15,7 +15,7 @@ function Row({ title, fetchUrl }) {
     const fetchData = async () => {
       const request = await axios.get(fetchUrl);
       setMovies(request.data.results);
-      console.log(request.data.results);
+      // console.log(request.data.results);
     };
     fetchData();
   }, [fetchUrl]);
@@ -37,7 +37,7 @@ function Row({ title, fetchUrl }) {
       <div className="flex flex-row overflow-hidden relative scroll-smooth gap-3 w-full">
         <button
           onClick={scroolMovieForLeftButton}
-          className="z-50 w-10 pl-3 bg-black my-20  w-[100px] bg-opacity-60 text-white sticky grid items-center justify-items-center left-0">
+          className="z-40 w-10 pl-3 bg-black my-20  w-[100px] bg-opacity-60 text-white sticky grid items-center justify-items-center left-0">
           <AiOutlineArrowLeft className="mr-3" />
         </button>
         {movies.map((movie, index) => (
@@ -118,7 +118,7 @@ function Row({ title, fetchUrl }) {
         ))}
         <button
           onClick={scroolMovieForRightButton}
-          className="z-50 text-xl  bg-black pr-3 my-20 w-full bg-opacity-60 text-white sticky grid items-center justify-items-center right-0">
+          className="z-40 text-xl  bg-black pr-3 my-20 w-full bg-opacity-60 text-white sticky grid items-center justify-items-center right-0">
           <AiOutlineArrowRight className="ml-3" />
         </button>
       </div>
