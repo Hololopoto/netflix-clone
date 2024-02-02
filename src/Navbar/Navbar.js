@@ -40,6 +40,7 @@ const Navbar = () => {
       } else {
         setBar(false);
       }
+      console.log(window.scrollY);
     });
     return () => {
       window.removeEventListener("scroll", null);
