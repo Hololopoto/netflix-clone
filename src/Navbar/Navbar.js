@@ -35,6 +35,8 @@ const Navbar = () => {
     window.addEventListener("scroll", () => {
       if (window.scrollY < 150) {
         setBar(true);
+      } else if (window.scrollY === 0) {
+        setBar(true);
       } else {
         setBar(false);
       }
@@ -47,7 +49,7 @@ const Navbar = () => {
   return (
     <nav className="w-full fixed z-50 ">
       <div
-        className={`px-4 md:px-16 py-6 flex bg-zinc-700 bg-opacity-40 flex-row items-center transition ${
+        className={`px-4 md:px-16 py-6 flex  flex-row items-center transition ${
           bar && "bg-zinc-700 bg-opacity-40"
         }  duration-500 ${showBar && "bg-black"} `}>
         <img
