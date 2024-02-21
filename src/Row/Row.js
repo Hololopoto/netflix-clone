@@ -77,7 +77,7 @@ function Row({ title, fetchUrl }) {
 
                   <span className="flex items-center   flex-row">
                     <AiFillStar className="fill-yellow-400" />
-                    {movie.vote_average}
+                    {movie.vote_average.toFixed(1)}
                   </span>
                 </div>
                 <hr className="w-[90%] mx-auto mt-3" />
