@@ -15,7 +15,6 @@ function Row({ title, fetchUrl }) {
     const fetchData = async () => {
       const request = await axios.get(fetchUrl);
       setMovies(request.data.results);
-      // console.log(request.data.results);
     };
     fetchData();
   }, [fetchUrl]);
@@ -37,15 +36,18 @@ function Row({ title, fetchUrl }) {
       <div className="flex flex-row overflow-hidden relative scroll-smooth gap-3 w-full">
         <button
           onClick={scroolMovieForLeftButton}
-          className="z-40 w-10 pl-3 bg-black my-20  w-[100px] bg-opacity-60 text-white sticky grid items-center justify-items-center left-0">
-          <AiOutlineArrowLeft className="mr-3" />
+          className="z-40  pl-3 bg-black my-20  w-[100px] bg-opacity-60 text-white sticky grid items-center justify-items-center left-0">
+          <AiOutlineArrowLeft
+            onClick={scroolMovieForLeftButton}
+            className="mr-3"
+          />
         </button>
         {movies.map((movie, index) => (
           <div
             className="List-Item relative flex  flex-row"
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}>
-            <div className="movies_poster transition z-0 my-10 py-10 cursor-pointer lg:w-[240px] md:w-[140px] max-[768px]:w-[80px] flex flex-row">
+            <div className="movies_poster transition z-10 my-10 py-10 cursor-pointer lg:w-[240px] md:w-[140px] max-[768px]:w-[80px] flex flex-row">
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt=""
@@ -53,10 +55,10 @@ function Row({ title, fetchUrl }) {
             </div>
 
             <div
-              className={`infos opacity-0 absolute  z-40 top-0 transition ${
+              className={`infos opacity-0 absolute  z-20 top-0 transition ${
                 hovered === index && "opacity-100"
               }`}>
-              <div className="info grid  items-center z-10 cursor-pointer transition lg:w-[450px] md:w-[340px] flex flex-row">
+              <div className="info   items-center z-20 cursor-pointer transition lg:w-[450px] md:w-[340px] flex flex-row">
                 <img
                   className="moviePoster"
                   src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
