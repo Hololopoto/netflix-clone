@@ -67,17 +67,19 @@ function Row({ title, fetchUrl }) {
               </div>
               <div className="infos-text bg-neutral-700 w-full py-4   flex flex-col ">
                 <div className="rate text-white flex flex-row mx-4 place-content-between items-center">
-                  <div className="name  lg:text-2xl md:text-l sm:text-xs ">
-                    {movie?.title || movie?.name || movie?.original_name}
+                  <div className="name flex   lg:text-xl md:text-l sm:text-xs ">
+                    <h4>
+                      {movie?.title || movie?.name || movie?.original_name}
+                    </h4>
                   </div>
 
-                  <div className="dates text-white">
-                    <div className="date lg:text-2xl md:text-l sm:text-xs">
-                      <h5>{movie.release_date || movie.first_air_date}</h5>
-                    </div>
+                  <div className="date flex mx-4 flex-nowrap text-white  items-center ">
+                    <h5 className=" lg:text-xl md:text-l sm:text-xs text-nowrap">
+                      {movie.release_date || movie.first_air_date}
+                    </h5>
                   </div>
 
-                  <span className="flex items-center   flex-row">
+                  <span className="flex items-center  flex-row">
                     <AiFillStar className="fill-yellow-400" />
                     {movie.vote_average.toFixed(1)}
                   </span>
