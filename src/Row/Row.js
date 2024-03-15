@@ -11,6 +11,9 @@ function Row({ title, fetchUrl }) {
   const [movies, setMovies] = useState([]);
   const [hovered, setHovered] = useState(null);
 
+  let currentDate = new Date().getFullYear();
+  let year;
+  console.log("Tarih", currentDate);
   useEffect(() => {
     const fetchData = async () => {
       const request = await axios.get(fetchUrl);
