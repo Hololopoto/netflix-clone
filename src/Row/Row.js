@@ -18,7 +18,6 @@ function Row({ title, fetchUrl }) {
     };
     fetchData();
   }, [fetchUrl]);
-
   const scroolMovieForLeftButton = (e) => {
     e.target.parentElement.scrollLeft -= 1000;
   };
@@ -26,7 +25,6 @@ function Row({ title, fetchUrl }) {
   const scroolMovieForRightButton = (e) => {
     e.target.parentElement.scrollLeft += 1000;
   };
-
   return (
     <div className="List-Group  ">
       <h2 className="text-white lg:text-2xl md:text-lg max-[768px]:text-sm -my-8 md:-my-14 max-[768px]:-my-16 pl-10">
@@ -72,10 +70,11 @@ function Row({ title, fetchUrl }) {
                       {movie?.title || movie?.name || movie?.original_name}
                     </h4>
                   </div>
-
                   <div className="date flex mx-4 flex-nowrap text-white  items-center ">
                     <h5 className=" lg:text-xl md:text-l sm:text-xs text-nowrap">
-                      {movie.release_date || movie.first_air_date}
+                      {movie.release_date
+                        ? movie.release_date.split("-").reverse().join(".")
+                        : movie.first_air_date.split("-").reverse().join(".")}
                     </h5>
                   </div>
 
