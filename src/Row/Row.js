@@ -11,8 +11,8 @@ function Row({ title, fetchUrl }) {
   const [movies, setMovies] = useState([]);
   const [hovered, setHovered] = useState(null);
 
-  let currentDate = new Date().getFullYear();
-  let year;
+  // let currentDate = (new Date().getMonth() + 1).toString().padStart(2, "0");
+  let currentDate = new Date().toLocaleDateString();
   console.log("Tarih", currentDate);
   useEffect(() => {
     const fetchData = async () => {
