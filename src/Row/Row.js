@@ -10,10 +10,8 @@ import {
 function Row({ title, fetchUrl }) {
   const [movies, setMovies] = useState([]);
   const [hovered, setHovered] = useState(null);
-
-  // let currentDate = (new Date().getMonth() + 1).toString().padStart(2, "0");
-  let currentDate = new Date().toLocaleDateString();
-  console.log("Tarih", currentDate);
+  const currentDate = new Date().toLocaleDateString();
+  console.log("Tarih", typeof currentDate);
   useEffect(() => {
     const fetchData = async () => {
       const request = await axios.get(fetchUrl);
@@ -75,15 +73,28 @@ function Row({ title, fetchUrl }) {
                   </div>
                   <div className="date flex mx-4 flex-nowrap text-white  items-center ">
                     <h5 className=" lg:text-xl md:text-l sm:text-xs text-nowrap">
-                      {movie.release_date
-                        ? movie.release_date.split("-").reverse().join(".")
-                        : movie.first_air_date.split("-").reverse().join(".")}
+                      {movie.release_date || movie.first_air_date
+                        ? (movie.release_date || movie.first_air_date)
+                            .split("-")
+                            .reverse()
+                            .join(".")
+                        : ""}
                     </h5>
+                    {movie.release_date &&
+                    movie.release_date.split("-").reverse().join(".") >
+                      currentDate
+                      ? "New"
+                      : ""}
+                    {movie.first_air_date &&
+                    movie.first_air_date.split("-").reverse().join(".") >
+                      currentDate
+                      ? "New"
+                      : ""}
                   </div>
 
                   <span className="flex items-center  flex-row">
                     <AiFillStar className="fill-yellow-400" />
-                    {movie.vote_average.toFixed(1)}
+                    {movie.vote_average ? movie.vote_average.toFixed(1) : ""}
                   </span>
                 </div>
                 <hr className="w-[90%] mx-auto mt-3" />

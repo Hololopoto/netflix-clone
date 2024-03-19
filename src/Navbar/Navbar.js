@@ -53,11 +53,11 @@ const Navbar = () => {
         className={`px-4 md:px-16 py-6 flex  flex-row items-center transition ${
           bar && "bg-zinc-700 bg-opacity-40"
         }  duration-500 ${showBar && "bg-black"} `}>
-        <img
+        {/* <img
           className="h-4 lg:h-7"
           src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
           alt="#"
-        />
+        /> */}
         <div className="flex-row ml-8 gap-7 hidden lg:flex">
           <NavbarItem label="Home" />
           <NavbarItem label="Series" />
