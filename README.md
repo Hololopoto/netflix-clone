@@ -1,2 +1,2 @@
 # Netflix Clone Page
-Link: https://hololopoto-netflix-clone.netlify.app/
+Link: https://alper-movieapp.netlify.app/
